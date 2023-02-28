@@ -2,20 +2,29 @@ const container = document.querySelector(".container");
 let gridSize = 16;
 
 for (i = 0; i < gridSize; i++) {
-  const gridSquareDown = document.createElement("div");
-  gridSquareDown.className = "down";
-  gridSquareDown.textContent = "test";
-  container.appendChild(gridSquareDown);
+  const flexContainer = document.createElement("div");
+  flexContainer.className = "flexContainer";
+  container.appendChild(flexContainer);
 }
 
-const gridSquareDownNodeList = document.querySelectorAll("div.down");
-console.log(gridSquareDownNodeList);
+const flexContainerNodeList = document.querySelectorAll("div.flexContainer");
+console.log(flexContainerNodeList);
 
-for (i = 0; i < gridSize - 1; i++) {
-  for (const square of gridSquareDownNodeList) {
-    const gridSquareRight = document.createElement("div");
-    gridSquareRight.className = "across";
-    gridSquareRight.textContent = "test";
-    square.appendChild(gridSquareRight);
+for (i = 0; i < gridSize; i++) {
+  for (const container of flexContainerNodeList) {
+    const gridSquare = document.createElement("div");
+    gridSquare.className = "gridSquare";
+    gridSquare.style.width = 100 / gridSize + "%";
+    gridSquare.style.height = "50px";
+    container.appendChild(gridSquare);
   }
 }
+
+const squares = document.querySelectorAll("div.gridSquare");
+
+console.log(squares);
+squares.forEach((square) => {
+  square.addEventListener("mouseover", () => {
+    square.classList.add("hover");
+  });
+});

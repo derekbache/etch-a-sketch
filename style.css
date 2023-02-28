@@ -1,4 +1,20 @@
-div.across {
-  display: inline-block;
-  padding: 2px;
+html,
+body {
+  min-height: 100%;
+}
+
+div.flexContainer {
+  display: flex;
+  margin: auto;
+}
+
+div.gridSquare {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px;
+  background-color: aqua;
+}
+
+div.hover {
+  background-color: red;
 }
