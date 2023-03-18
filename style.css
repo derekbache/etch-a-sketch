@@ -1,9 +1,5 @@
-html,
-body {
-  min-height: 100%;
-}
-
-div.flexContainer {
+div.flexContainer,
+button {
   display: flex;
   margin: auto;
 }
@@ -11,10 +7,16 @@ div.flexContainer {
 div.gridSquare {
   display: flex;
   justify-content: space-evenly;
-  margin: 5px;
+  margin: 1px;
   background-color: aqua;
 }
 
 div.hover {
   background-color: red;
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
